@@ -19,7 +19,8 @@
   font-size: 20px;
   color: #383838;
   max-height: 50px;
-    overflow: hidden;
+  overflow: hidden;
+  min-height: 48px;
 }
 
 .card-text {
@@ -55,12 +56,16 @@
 }
 
 .desc_text {
-    overflow:hidden;
+  overflow: hidden;
 }
 .desc_height {
-    min-height: 94px;
-    margin-bottom: 0px !important;
+  min-height: 94px;
+  margin-bottom: 0px !important;
 }
 .desc_heightAuto {
-    max-height:5000px;
+  max-height: 5000px;
+}
+.spinner{
+  text-align:center;
+  margin-top:125px;
 }
