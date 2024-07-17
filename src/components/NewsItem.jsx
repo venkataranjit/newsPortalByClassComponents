@@ -3,7 +3,8 @@ import "./NewsItem.css";
 
 export default class NewsItem extends Component {
   render() {
-    let { title, description, imgUrl, newsurl, author, date, category } = this.props;
+    let { title, description, imgUrl, newsurl, author, date, category } =
+      this.props;
     const dateObj = new Date(date);
 
     // Extract the date and time parts
@@ -41,15 +42,25 @@ export default class NewsItem extends Component {
       <>
         <div className="col-sm-6 col-md-4 col-lg-3">
           <div className="animate__animated animate bounce card">
-          
             <div className="container mt-3">
               <img src={imgUrl} className="card-img-top " alt="..." />
-              <span className="badge rounded-pill bg-dark fixed">{categoryDisplay} </span>
+              <span className="badge rounded-pill bg-dark fixed">
+                {categoryDisplay}{" "}
+              </span>
             </div>
             <div className="card-body">
-            <p className="card-text float-start"><small className="text-body-secondary">By <b>{author}</b></small></p>
-            <p className="card-text float-end"><small className="text-body-secondary">{formattedDate}</small></p>
-              <h5 className="card-title">{title}...</h5>
+              <p className="card-text float-start">
+                <small className="text-body-secondary">
+                  By <b>{author}</b>
+                </small>
+              </p>
+              <p className="card-text float-end">
+                <small className="text-body-secondary">{formattedDate}</small>
+              </p>
+              <h5 className="card-title">
+                {title}
+                <a href="/">...</a>
+              </h5>
               <p className="card-text mb-5 desc_text desc_height">
                 {description}
                 <a href="/">...</a>

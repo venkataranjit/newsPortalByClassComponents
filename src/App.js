@@ -14,7 +14,7 @@ export default class App extends Component {
     };
     this.navBarItems = [
       {
-        newsHeading: "All News",
+        newsHeading: "Top Headlines",
         category: "",
         path: "/",
       },

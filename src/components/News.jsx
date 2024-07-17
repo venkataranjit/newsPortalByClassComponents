@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 import Spinner from "./Spinner";
+import noImage from "../assets/images/noImage.jpg"
 
 export default class News extends Component {
-  constructor() {
-    super();
+   capitalized = (text) =>{
+    return text.slice(0, 1).toUpperCase() + text.slice(1);
+  } 
+  constructor(props) {
+    super(props);
     this.state = {
       articles: [],
       loading: false,
@@ -12,6 +16,8 @@ export default class News extends Component {
       pageSize: 8,
       totalResults: 0, // Added totalResults to state
     };
+
+    document.title = `${this.capitalized(this.props.category)} - News`;
   }
   async updateNews() {
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.state.pageSize}`;
@@ -66,7 +72,7 @@ export default class News extends Component {
                     imgUrl={
                       e.urlToImage
                         ? e.urlToImage
-                        : "https://cdn.vectorstock.com/i/500p/82/99/no-image-available-like-missing-picture-vector-43938299.jpg"
+                        : noImage
                     }
                     description={e.description ? e.title.slice(0, 80) : ""}
                     newsurl={e.url}

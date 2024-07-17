@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
+import {NavLink, Link} from "react-router-dom";
 
 export default class NavBar extends Component {
   constructor() {
@@ -65,28 +65,18 @@ export default class NavBar extends Component {
               className="collapse navbar-collapse"
               id="navbarSupportedContent"
             >
-              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul className="navbar-nav mb-2 mb-lg-0 ms-auto">
                 {this.navBarItems.map((item, index) => {
                   return (
                     <li className="nav-item" key={index}>
-                      <Link className="nav-link" aria-current="page" to={item.url}>
+                      <NavLink className="nav-link" aria-current="page" to={item.url}>
                         {item.name}
-                      </Link>
+                      </NavLink>
                     </li>
                   );
                 })}
               </ul>
-              <form className="d-flex" role="search">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button className="btn btn-outline-light" type="submit">
-                  Search
-                </button>
-              </form>
+             
             </div>
           </div>
         </nav>
