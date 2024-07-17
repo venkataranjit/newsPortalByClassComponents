@@ -1,17 +1,45 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 
 export default class NavBar extends Component {
-  render() {
+  constructor() {
+    super();
     this.navBarItems = [
-      "Home",
-      "Business",
-      "Entertainment",
-      "General",
-      "Health",
-      "Science",
-      "Sports",
-      "Technology",
+      {
+        name: "Home",
+        url: "/",
+      },
+      {
+        name: "Business",
+        url: "/Business",
+      },
+      {
+        name: "Entertainment",
+        url: "/Entertainment",
+      },
+      {
+        name: "General",
+        url: "/General",
+      },
+      {
+        name: "Health",
+        url: "/Health",
+      },
+      {
+        name: "Science",
+        url: "/Science",
+      },
+      {
+        name: "Sports",
+        url: "/Sports",
+      },
+      {
+        name: "Technology",
+        url: "/Technology",
+      },
     ];
+  }
+  render() {
     return (
       <>
         <nav
@@ -19,9 +47,9 @@ export default class NavBar extends Component {
           data-bs-theme="dark"
         >
           <div className="container">
-            <a className="navbar-brand" href="/">
+            <Link className="navbar-brand" to="/">
               News Portal
-            </a>
+            </Link>
             <button
               className="navbar-toggler"
               type="button"
@@ -38,12 +66,12 @@ export default class NavBar extends Component {
               id="navbarSupportedContent"
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                {this.navBarItems.map((item) => {
+                {this.navBarItems.map((item, index) => {
                   return (
-                    <li className="nav-item">
-                      <a className="nav-link" aria-current="page" href="/">
-                        {item}
-                      </a>
+                    <li className="nav-item" key={index}>
+                      <Link className="nav-link" aria-current="page" to={item.url}>
+                        {item.name}
+                      </Link>
                     </li>
                   );
                 })}

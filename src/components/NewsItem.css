@@ -21,6 +21,7 @@
   max-height: 50px;
   overflow: hidden;
   min-height: 48px;
+  clear: both;
 }
 
 .card-text {
@@ -29,6 +30,7 @@
   font-size: 15px;
   letter-spacing: 0.3px;
   color: #4e4e4e;
+  margin-bottom: 10px;
 }
 
 .card .container {
@@ -41,6 +43,7 @@
   align-items: center;
   justify-content: center;
   padding: 0px;
+  position: relative;
 }
 
 .container:hover > img {
@@ -69,3 +72,54 @@
   text-align:center;
   margin-top:125px;
 }
+.three h1 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  padding-bottom: 15px;
+  position: relative;
+}
+.three h1:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 55px;
+  background-color: #198754;
+}
+.three h1:after {
+  content: "";
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+    height: 1px;
+    width: 100%;
+    background-color: #198754;
+}
+.seven h1 {
+  text-align: center;
+      font-size:30px; font-weight:300; color:#222; letter-spacing:1px;
+      text-transform: uppercase;
+  
+      display: grid;
+      grid-template-columns: 1fr max-content 1fr;
+      grid-template-rows: 27px 0;
+      grid-gap: 20px;
+      align-items: center;
+  }
+  
+  .seven h1:after,.seven h1:before {
+      content: " ";
+      display: block;
+      border-bottom: 1px solid #198754;
+      border-top: 1px solid #198754;
+      height: 5px;
+    background-color:#f8f8f8;
+  }
+ .fixed{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
