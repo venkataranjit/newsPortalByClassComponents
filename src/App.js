@@ -72,7 +72,7 @@ export default class App extends Component {
                     country="us"
                     category={item.category}
                     newsHeading={item.newsHeading}
-                    apiKey={this.state.naguApi}
+                    apiKey={this.state.ranjitApi}
                   />
                 }
               />
