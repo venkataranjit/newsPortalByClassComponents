@@ -43,7 +43,7 @@ export default class NavBar extends Component {
     return (
       <>
         <nav
-          className="navbar navbar-expand-lg bg-success"
+          className="navbar navbar-expand-lg bg-success fixed-top"
           data-bs-theme="dark"
         >
           <div className="container">
